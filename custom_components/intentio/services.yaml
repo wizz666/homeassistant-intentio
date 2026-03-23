@@ -1,0 +1,77 @@
+create:
+  name: Create automation bundle
+  description: >
+    Describe a home automation goal in plain language. Intentio will generate
+    a coordinated bundle of automations to achieve it, ready for your review.
+  fields:
+    intention:
+      name: Intention
+      description: Your goal in plain language.
+      required: true
+      example: "I want the house to feel safe and cozy at night"
+      selector:
+        text:
+          multiline: true
+
+deploy:
+  name: Deploy bundle
+  description: Deploy a pending automation bundle to Home Assistant.
+  fields:
+    bundle_id:
+      name: Bundle ID
+      description: The ID of the bundle to deploy.
+      required: true
+      example: "a1b2c3d4"
+      selector:
+        text:
+
+reject:
+  name: Reject bundle
+  description: Reject a pending bundle without deploying it.
+  fields:
+    bundle_id:
+      name: Bundle ID
+      required: true
+      selector:
+        text:
+
+feedback:
+  name: Rate bundle
+  description: Rate a deployed bundle as good or bad. Used to improve future suggestions.
+  fields:
+    bundle_id:
+      name: Bundle ID
+      required: true
+      selector:
+        text:
+    rating:
+      name: Rating
+      description: Your rating of how well this bundle achieved its goal.
+      required: true
+      selector:
+        select:
+          options:
+            - good
+            - bad
+
+improve:
+  name: Improve bundle
+  description: >
+    Regenerate a bundle using the original intention and any feedback given.
+    The old bundle is retired and a new one is created for review.
+  fields:
+    bundle_id:
+      name: Bundle ID
+      required: true
+      selector:
+        text:
+
+delete:
+  name: Delete bundle
+  description: Permanently remove a bundle and its automations from the deployment file.
+  fields:
+    bundle_id:
+      name: Bundle ID
+      required: true
+      selector:
+        text:

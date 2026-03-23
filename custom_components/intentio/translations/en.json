@@ -1,0 +1,38 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Intentio — Intent-based Automation",
+        "description": "Connect an AI provider. Intentio will use it to turn your goals into working automations. Get a free API key at console.groq.com.",
+        "data": {
+          "ai_provider": "AI Provider",
+          "ai_key": "API Key",
+          "ai_base_url": "Base URL (optional)",
+          "ai_model": "Model (optional)"
+        },
+        "data_description": {
+          "ai_provider": "Groq is recommended — fast, free, and excellent at structured output",
+          "ai_key": "Leave empty for ollama or lmstudio",
+          "ai_base_url": "Only needed for the 'custom' provider",
+          "ai_model": "Leave empty to use the provider default"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Intentio is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Intentio Settings",
+        "data": {
+          "ai_provider": "AI Provider",
+          "ai_key": "API Key",
+          "ai_base_url": "Base URL (optional)",
+          "ai_model": "Model (optional)"
+        }
+      }
+    }
+  }
+}
